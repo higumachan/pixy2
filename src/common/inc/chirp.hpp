@@ -200,13 +200,13 @@ struct ProcTableEntry
 class Chirp
 {
 public:
-    Chirp(bool hinterested=false, bool client=false, Link *link=NULL);
+    Chirp(bool hinterested=false, bool client=false, Link *link=(Link*)NULL);
     virtual ~Chirp();
 
     virtual int init(bool connect);
     int setLink(Link *link);
     ChirpProc getProc(const char *procName, ProcPtr callback=0);
-    int setProc(const char *procName, ProcPtr proc,  ProcTableExtension *extension=NULL);
+    int setProc(const char *procName, ProcPtr proc,  ProcTableExtension *extension=(ProcTableExtension *)NULL);
     int getProcInfo(ChirpProc proc, ProcInfo *info);
     int registerModule(const ProcModule *module);
     void setSendTimeout(uint32_t timeout);
